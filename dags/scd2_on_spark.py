@@ -1,4 +1,5 @@
-"""Calculate SCD-2 table from slices.\n
+"""
+Calculate SCD-2 table from slices on Spark 2.4.4 or later.
 """
 import os
 from datetime import datetime, timedelta
@@ -10,7 +11,7 @@ from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from spark import conf_2_4_4
 
 
-DAG_ID = "scd_tables_builder"
+DAG_ID = "scd2_on_spark"
 OWNER = ""
 AIRFLOW_HOME = os.path.dirname(os.path.abspath(os.path.join(__file__, "../..")))
 APP_PATH = f'{AIRFLOW_HOME}/scripts/scd_tables_builder/builder.py'
