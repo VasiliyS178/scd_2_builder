@@ -174,8 +174,6 @@ CROSS JOIN
 WHERE
 	cs.customer_id IS NULL
 ;
-select *
-from catalog_name.schema_name.deleted_rows 
 
 --Шаг 5. Изменившиеся записи для добавления
 DROP TABLE IF EXISTS catalog_name.schema_name.updated_rows;
@@ -269,9 +267,6 @@ FROM
 	catalog_name.schema_name.closed_rows
 ;
 
-select * 
-from catalog_name.schema_name.load_batch;
-	
 	
 --Шаг 8. Merge в целевую таблицу
 MERGE INTO catalog_name.schema_name.customer_consents_versioned AS trg
